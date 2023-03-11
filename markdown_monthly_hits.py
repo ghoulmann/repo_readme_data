@@ -19,7 +19,7 @@ def find_markdown_files(path):
     contents = repo.get_contents(path)
     for item in contents:
         if item.type == "file" and item.name.endswith(".md"):
-            view_stats = repo.get_views_traffic(path=item.path, per="day")
+            view_stats = repo.get_views_traffic(f"{repo.full_name}/blob/main/{item.path}", per="week")
             total_views = sum(view_stats["views"])
             files.append((item.path, total_views))
         elif item.type == "dir":
