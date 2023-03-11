@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from github import Github
 from dotenv import load_dotenv
+import os
 
 # Set up authentication with a personal access token
 load_dotenv()
